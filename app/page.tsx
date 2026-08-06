@@ -4,11 +4,12 @@ import HomePagePitch from "@/components/ui/HomePagePitch";
 import HomePageProjects from "@/components/ui/HomePageProjects";
 import HomePageTechStack from "@/components/ui/HomePageTechStack";
 
-export default function Home() {
+export default async function Home() {
+  
   return (
     <main>
-      <div className="min-h-screen p-8 pb-20 sm:p-20 space-y-10">
-        <HomepageHero/>
+      <HomepageHero/>
+      <div className="space-y-20">
         <HomePageProjects/>
         <HomePageTechStack/>
         <HomePageFAQ/>
