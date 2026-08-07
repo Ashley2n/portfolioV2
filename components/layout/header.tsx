@@ -1,103 +1,175 @@
 "use client";
 
-import { headerLinks } from "@/utils/types/navigation";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useState } from "react";
-import ContactMeButton from "../ui/ContactMeButton";
-import TextFlipButton from "../ui/TextFlipButton";
-
-// TODO:
-//  [ ] Read Nav links from an array
+import { ChevronDown, Menu, X } from "lucide-react";
 
 export default function Header() {
-  const handleResumeOnclick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("Downloading Resume");
-    console.log("Event Target: ", event.currentTarget);
-  };
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
-  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    let lastScroll = window.scrollY;
+
+    const handleScroll = () => {
+      const current = window.scrollY;
+
+      setScrolled(current > 50);
+
+      if (current > lastScroll && current > 120) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+
+      lastScroll = current;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className=" absolute w-full px-10 py-2 ">
-      <div className="sticky BBG rounded-full flex justify-between items-center px-10 py-2 z-60">
-        {/* Logo Button */}
-        <div>
-          <Link href={"/"} className="font-bold italic text-2xl font-chela">
+    <>
+      <header
+        className={`fixed top-0 left-0 w-full z-[60] transition-all duration-500 ${hidden ? "-translate-y-full" : "translate-y-0"} ${scrolled ? ` backdrop-blur-xl border-b border-white/10 ` : "bg-transparent"} `}
+      >
+        <nav className="flex items-center justify-between px-10 py-3">
+          <Link href="/" className=" font-bold italic text-2xl">
             Aa
           </Link>
-        </div>
 
-{/* Header links */}
-        <nav>
-          <ol className="md:flex gap-1 px-4 rounded-2xl hidden text-sm">
-            {headerLinks.map((link) => (
-              <li
-                key={link.path}
-                className="li-hover"
-              >
-                <Link
-                  href={link.path}
-                  className="link-hover"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ol>
-        </nav>
+          {/* Desktop */}
+          <div className="hidden md:block">
+            <DesktopNav />
+          </div>
 
-        {/* Resume Button */}
-        <div className="hidden md:flex">
-          <TextFlipButton text="Resume" />
-        </div>
+          <div className="hidden md:block">
+            <button>Resume</button>
+          </div>
 
-        {/* Menu Button */}
-        <div className="ml-auto md:hidden">
+          {/* Mobile button */}
+
           <button
-            onClick={() => {
-              setIsMobile(!isMobile);
-            }}
-            className="flex items-center gap-6 z-50"
+            className="md:hidden"
+            onClick={() => setMobileOpen(!mobileOpen)}
           >
-            {isMobile ? (
-              <X
-                onClick={() => (document.body.style.overflow = "")}
-                width={30}
-              />
-            ) : (
-              <Menu
-                onClick={() => (document.body.style.overflow = "hidden")}
-                width={30}
-              />
-            )}
+            {mobileOpen ? <X /> : <Menu />}
           </button>
-        </div>
-      </div>
+        </nav>
+      </header>
 
-      {/* Mobile Menu Items */}
-      {isMobile && (
-        <div className="BBG absolute top-20 left-10 w-9/10  h-[80vh] z-60 rounded-2xl transition-colors">
-          <ul className="flex gap-8 flex-col text-center subtitle h-full items-center justify-center w-full ">
-            {headerLinks.map((link) => (
-              <li key={link.path} className="li-hover w-full">
-                <Link
-                  href={link.path}
-                  title={link.label}
-                  onClick={() => {
-                    setIsMobile(!isMobile);
-                    document.body.style.overflow = "unset";
-                  }}
-                  className="link-hover"
-                >
-                  {link.label}
-                </Link>
+      {/* Mobile menu lives outside header */}
+
+      <MobileNav open={mobileOpen} />
+    </>
+  );
+}
+
+const links = [
+  {
+    label: "Projects",
+    children: [
+      {
+        label: "Transcriber",
+        path: "/projects/transcriber",
+      },
+      {
+        label: "Cloud Splitter",
+        path: "/projects/cloud",
+      },
+    ],
+  },
+
+  {
+    label: "Services",
+    children: [
+      {
+        label: "Development",
+        path: "/services/dev",
+      },
+      {
+        label: "Automation",
+        path: "/services/automation",
+      },
+    ],
+  },
+];
+
+function DesktopNav() {
+  return (
+    <ul className="flex gap-10">
+      {links.map((item) => (
+        <li key={item.label} className="relative group">
+          <button className="flex items-center gap-2">
+            {item.label}
+
+            <ChevronDown size={16} />
+          </button>
+
+          <div
+            className="absolute top-8 left-0 opacity-0 invisible translate-y-3 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 bg-black/50
+backdrop-blur-xl rounded-xl border border-white/10 p-3 w-56 "
+          >
+            <ul>
+              {item.children.map((child) => (
+                <li key={child.path}>
+                  <Link
+                    href={child.path}
+                    className=" block px-3 py-2 rounded-lg hover:bg white/10 "
+                  >
+                    {child.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function MobileNav({ open }: { open: boolean }) {
+  return (
+    <div
+      className={` fixed inset-0 z-50 md:hidden transition-all duration-500 ${open ? "opacity-100" : "opacity-0 pointer-events-none"} `}
+    >
+      <div className=" absolute inset-0 bg-black/60 backdrop-blur-xl " />
+
+      <div className=" relative mt-24 mx-10 ">
+        <ul className=" flex flex-col gap-8 items-center ">
+          <li>
+            <Link href="/projects">Projects</Link>
+
+            <ul className=" mt-4 space-y-3 text-sm opacity-70 ">
+              <li>
+                <Link href="/projects/transcriber">Transcriber</Link>
               </li>
-            ))}
-            <TextFlipButton text="Resume" />
-          </ul>
-        </div>
-      )}
-    </header>
+
+              <li>
+                <Link href="/projects/cloud">Cloud Splitter</Link>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <Link href="/services">Services</Link>
+
+            <ul className=" mt-4 space-y-3 text-sm opacity-70 ">
+              <li>
+                <Link href="/services/dev">Development</Link>
+              </li>
+
+              <li>
+                <Link href="/services/automation">Automation</Link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 }

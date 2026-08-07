@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/footer";
-import { chelaOne, geistMono, geistSans, poppins, titanOne } from "@/lib/fonts/fonts";
+import { poppins, titanOne } from "@/lib/fonts/fonts";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
 
-
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Ashley's Portfolio",
@@ -18,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${chelaOne.variable} ${titanOne.variable} ${poppins.variable} antialiased`}
+        className={`${titanOne.variable} ${poppins.variable} antialiased`}
       >
         <Header />
         {children}
