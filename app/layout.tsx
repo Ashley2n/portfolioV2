@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/footer";
-import { poppins, titanOne } from "@/lib/fonts/fonts";
+import { poppins, teko,  } from "@/lib/fonts/fonts";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import Header from "@/components/layout/header";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <body
-        className={`${titanOne.variable} ${poppins.variable} antialiased`}
+        className={`${teko.variable} ${poppins.variable} antialiased`}
       >
         <Header />
         {children}

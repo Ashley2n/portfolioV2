@@ -4,13 +4,7 @@ import LightPillar from "../Backgrounds/LightPillar";
 export default function HomepageHero() {
   return (
     <section className="relative isolate w-full h-screen overflow-hidden">
-      {/* Background */}
       {/* <LightPillar
-        className="absolute inset-0"
-        interactive
-        intensity={1.2}
-      /> */}
-      <LightPillar
         topColor="#5227FF"
         bottomColor="#FF9FFC"
         intensity={1.3}
@@ -24,18 +18,17 @@ export default function HomepageHero() {
         mixBlendMode="screen"
         quality="high"
         className="abolute inset-0"
-      />
+      /> */}
 
       {/* Content */}
-      <div className="relative z-10 flex h-full items-center">
-        <div className="mx-auto max-w-7xl px-6">
-          <h1 className="text-7xl font-bold text-zinc-100">
+      <div className="relative z-10 flex h-full items-end justify-baseline ">
+        <div className="mx-auto max-w-7xl px-6 ">
+          <p className="mt-6 max-w-xl text-2xl pl-6 text-zinc-300">
             Software Developer
-          </h1>
-
-          <p className="mt-6 max-w-xl text-zinc-300">
-            Building cloud-native applications and AI workflows.
           </p>
+          <h1 className="text-[14.8rem] font-bold font-teko uppercase text-zinc-100  -tracking-[0.1rem] leading-none">
+            Ashley Abongwa
+          </h1>
         </div>
       </div>
 
@@ -51,7 +44,7 @@ export default function HomepageHero() {
           bg-gradient-to-b
           from-transparent
           via-zinc-950/60
-          to-black
+          to-background
         "
       />
     </section>

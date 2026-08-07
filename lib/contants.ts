@@ -211,7 +211,7 @@ export const projectData: ProjectCardType[] = [
   },
 ];
 
-export const HomePagePorjectData = projectData.copyWithin(0, 0, 2);
+export const HomePagePorjectData = projectData.slice(1,4);
 
 export const FAQSet: FAQSetType[] = [
   {

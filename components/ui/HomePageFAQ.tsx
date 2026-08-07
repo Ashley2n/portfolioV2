@@ -11,15 +11,20 @@ type HomePageFAQProps = {
 
 export default function HomePageFAQ({ otherStyles }: HomePageFAQProps) {
   return (
-    <section className={` ${otherStyles} min-h-screen flex justify-center items-center h-full`}>
-      <div className="flex justify-center flex-col lg: items-center h-full w-full ">
-        <h2 className="title text-center">Freqently Asked <br/>Questions</h2>
-        
-        <ul
-          className="w-full p-4 space-y-4 mt-10"
-          id="accordion-card"
-          data-accordion="collapse"
-        >
+    <section className={`flex min-h-screen w-full py-24 md:py-32  overflow-hidden ${otherStyles}`}>
+      <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
+        <div className="mb-10 space-y-3">
+
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+
+          <p className="max-w-xl text-sm leading-relaxed text-white/40">
+            Common questions about my process, experience, and development workflow.
+          </p>
+        </div>
+
+        <ul id="accordion-card" data-accordion="collapse" className="divide-y divide-white/10">
           {FAQSet.map((set, index) => (
             <QuestionItem key={index} Question={set.Question} Anwser={set.Anwser} />
           ))}
@@ -32,47 +37,30 @@ export default function HomePageFAQ({ otherStyles }: HomePageFAQProps) {
 export function QuestionItem({ Question, Anwser }: FAQSetType) {
   const [open, setOpen] = useState(false);
 
-  return (
-    <>
-      <div className="w-90 lg:w-260 mx-auto">
-        <input
-          id="expandCollapse"
-          checked={open}
-          type="checkbox"
-          className="peer sr-only"
-        />
-        <label
-          htmlFor="expandCollapse"
-          className={
-            "w-full flex items-center justify-between px-8 bg-zinc-900 hover:bg-zinc-700 transition-colors  outline outline-neutral-800/80  p-4 rounded-md gap-4 duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg shadow-neutral-900 cursor-pointer"
-          }
-          onClick={() => setOpen(!open)}
-        >
+    return (
+    <li className="border-b border-white/10">
+      <button
+        className="group flex w-full items-center justify-between gap-4 py-5 text-left transition-colors duration-300 hover:text-white"
+        onClick={() => setOpen(!open)}
+      >
+        <span className="text-sm font-medium tracking-tight text-foreground">
           {Question}
-          {open? (<ArrowUp
-            height={20}
-            width={20}
-            className={`ml-4 `}
-          />) :
-          (
-            <ArrowDown
-            height={20}
-            width={20}
-            className={`ml-4 `}
-          />
-          )}
-          
-        </label>
-        <div
-          className={
-            "overflow-hidden h-0  peer-checked:h-75 peer-checked:border peer-checked:border-zinc-800 peer-checked:-mt-2 peer-checked:border-t-0 transition-[height] duration-1000 ease-in-out bg-zinc-900   border-neutral-800/80"
-          }
-        >
-          <p className="text-zinc-300 p-4">
+        </span>
+
+        {open ? (
+          <ArrowUp className="size-4 shrink-0 text-muted-foreground transition-colors duration-300 group-hover:text-foreground" />
+        ) : (
+          <ArrowDown className="size-4 shrink-0 text-muted-foreground transition-colors duration-300 group-hover:text-foreground" />
+        )}
+      </button>
+
+      <div className={`grid overflow-hidden transition-all duration-500 ease-in-out ${open ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"}`}>
+        <div className="overflow-hidden">
+          <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
             {Anwser}
           </p>
         </div>
       </div>
-    </>
+    </li>
   );
 }
