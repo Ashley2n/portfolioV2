@@ -1,54 +1,57 @@
 import { ProjectCardType } from "@/app/types/types";
 import { truncatedText } from "@/utils/helper";
 import Image from "next/image";
+import Link from "next/link";
 
 const defaultImage = "/images/placeholderProjectImage2.jpg";
 
 export const ProjectCard = ({ item }: { item: ProjectCardType }) => {
   return (
-    <div className="group min-h-[200px] h-full min-w-90 w-100 md:w-130 lg:w-100 xl:w-125 hover:cursor-pointer pb-8 One mx-auto">
-      <div className="bg-neutral-400 overflow-hidden relative rounded-t-xl h-70">
+    <Link
+      href={item.githubUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block"
+    >
+      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-white/5">
         <Image
-          width={425}
-          height={100}
-          src={item.imageUrl ? ("/images"+item.imageUrl) : defaultImage}
+          fill
+          src={item.imageUrl ? `/images${item.imageUrl}` : defaultImage}
           alt={item.title}
-          className=" w-full object-cover  transform rotate-8 translate-x-10 shadow-2xl shadow-amber-500 duration-500 transition-transform group-hover:scale-105"
+          className="object-cover translate-y-2 scale-105 transition-transform duration-700 ease-out group-hover:translate-y-0 group-hover:scale-110"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </div>
-      <div className=" p-5 text-left BBG  rounded-b-2xl">
-        <h3 className=" text-2xl text-neutral-100 font-bold group-hover:text-neutral-400 duration-300">
-          {item.title}
-        </h3>
-        <p className="text-xs mt-2 text-neutral-400 text-nowrap overflow-clip w-full">
-          {truncatedText({ text: item.subtext, maxWords: 7 })}
+
+      <div className="pt-5">
+        <div className="flex items-start justify-between gap-4">
+          <h3 className="text-xl font-medium tracking-tight text-foreground transition-colors duration-300 group-hover:text-text-muted">
+            {item.title}
+          </h3>
+        </div>
+
+        <p className="mt-2 text-sm leading-relaxed text-text-faint">
+          {truncatedText({ text: item.subtext, maxWords: 12 })}
         </p>
-        <ul className="flex gap-3 wrap-normal flex-wrap mt-2">
+
+        <ul className="mt-3 flex flex-wrap gap-2">
           {item.skills.map((s, index) => (
             <li
               key={index}
-              style={{
-                backgroundColor: s.color + "50",
-                borderColor: s.color + "BF",
-              }}
-              className={
-                " w-fit text-xs font-semibold px-2 py-1  text-neutral-100 rounded-lg flex flex-row gap-2 items-center border " +
-                ``
-              }
+              style={{ borderColor: `${s.color}40` }}
+              className="flex items-center gap-1.5 rounded-lg border bg-surface-chip px-2 py-1 text-xs text-text-muted transition-colors duration-300 hover:bg-surface-chip-hover"
             >
-              <span>
-                <Image
-                  src={s.imageUrl ? s.imageUrl : defaultImage}
-                  alt={s.name}
-                  height={20}
-                  width={20}
-                />
-              </span>
-              <p>{s.name}</p>
+              <Image
+                src={s.imageUrl ? s.imageUrl : defaultImage}
+                alt={s.name}
+                height={14}
+                width={14}
+              />
+              <span>{s.name}</span>
             </li>
           ))}
         </ul>
       </div>
-    </div>
+    </Link>
   );
 };

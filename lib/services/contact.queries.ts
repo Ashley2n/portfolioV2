@@ -1,5 +1,5 @@
 import { prisma } from "../prisma";
-import { contactFormType } from "../schema/contact";
+import {contactFormType, reviewFormType} from "../schema/contact";
 
 export const GetAllContactSubmissions = async () => {
   const result = await prisma.contactSubmission.findMany();
@@ -14,4 +14,19 @@ export const createContactSubmission = async (data: contactFormType) => {
   });
 
   return JSON.stringify(newContact);
+};
+
+export const GetAllReviewSubmissions = async () => {
+  const result = await prisma.contactSubmission.findMany();
+  console.log("DB RESULT:", result);
+
+  return result;
+};
+
+export const createReviewSubmission = async (data: reviewFormType) => {
+  // const newReview = await prisma.contactSubmission.create({
+  //   data
+  // });
+
+  return JSON.stringify(data);
 };

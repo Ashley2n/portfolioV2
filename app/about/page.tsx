@@ -2,9 +2,9 @@ import { AboutCardListing } from "@/components/ui/AboutCardListing";
 import { AboutMeCardItem } from "@/components/ui/AboutMeCardItem";
 import HomePagePitch from "@/components/ui/HomePagePitch";
 
-export default function page() {
+export default function AboutPage() {
   return (
-    <div className="space-y-50">
+    <div>
       <AboutMeCardItem />
       <AboutCardListing />
       <HomePagePitch/>

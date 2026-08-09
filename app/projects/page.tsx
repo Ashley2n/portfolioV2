@@ -1,17 +1,28 @@
+'use client'
 import { ProjectListCards } from "@/components/ui/ProjectListCards";
 import { ProjectsHeader } from "@/components/ui/ProjectsHeader";
+import {useState} from "react";
 
-export default function page() {
+export default function ProjectsPage() {
+
+    const [value, setValue] = useState("");
   return (
-    <div className=" py-10 h-fill w-full pt-30 px-10 md:px-[10%]">
-      <div className="flex flex-row items-center gap-5 justify-between">
-        <h2 className="text-2xl font-bold">Projects Page</h2>
+    <div className="page-shell">
+      <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
+        <div>
+          <p className="mb-2 text-sm uppercase tracking-[0.2em] text-text-faint">
+            Portfolio
+          </p>
 
-        <ProjectsHeader />
+          <h1 className="title">
+            All projects
+          </h1>
+        </div>
+
+        <ProjectsHeader value={value} setValue={setValue} />
       </div>
 
-      {/* Project Section */}
-      <ProjectListCards />
+      <ProjectListCards value={value} />
 
       {/* Tech stack Section */}
       {/* Make Tech Stack a Modal next to the Search bar */}

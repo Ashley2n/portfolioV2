@@ -9,12 +9,10 @@ export default async function Home() {
   return (
     <main>
       <HomepageHero/>
-      <div className="space-y-20">
-        <HomePageProjects/>
-        <HomePageTechStack/>
-        <HomePageFAQ/>
-        <HomePagePitch />
-      </div>
+      <HomePageProjects otherStyles="snap-section"/>
+      <HomePageTechStack otherStyles="snap-section"/>
+      <HomePageFAQ otherStyles="snap-section"/>
+      <HomePagePitch otherStyles="snap-section"/>
     </main>
   );
 }

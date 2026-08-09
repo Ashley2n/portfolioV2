@@ -2,13 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2be6d04d-aaa9-452e-a356-baba4093d2ba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ui/ReviewForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ui/modals/ConfirmationModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ui/modals/GeneralModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Local-Primsa-Db.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Production-Ready-Guide.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/desgin-pattern.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Logos/aa-logo-32-black-bg.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Logos/aa-logo-32-transparent.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/about/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/contact/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/hooks/useHeaderScroll.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/hooks/useHeaderScroll.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/projects/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/projects/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layout/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/layout/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/AboutCardListing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/AboutCardListing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/AboutMeCardItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/AboutMeCardItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ui/HomePageFAQ.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/HomePageFAQ.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/HomePagePitch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/HomePagePitch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/HomePageProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/HomePageProjects.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/HomePageTechStack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/HomePageTechStack.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ui/HomepageHero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/HomepageHero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fonts/fonts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fonts/fonts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/ProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/ProjectCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/ProjectListCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/ProjectListCards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/ProjectsHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/ProjectsHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/actionButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/actionButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/contants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/contants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/schema/contact.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/schema/contact.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/contact.queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/contact.queries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/types/navigation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/types/navigation.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +51,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3HbOphY08pFo4xsoCKRZr7JAD41" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,14 +69,28 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "Reactbits-BG",
     "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "node",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "C:/Users/awind/Documents/01-Projects/Personal-Projects/Portfolio2.0/portfolio",
+    "last_opened_file_path": "C:/Users/aabongwa/Documents/01-Projects/Side-Projects/portfolioV2/app",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "node.js.selected.package.jshint": "",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\aabongwa\\Documents\\01-Projects\\Side-Projects\\portfolioV2\\node_modules\\typescript\\lib"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\app" />
+      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\public\Logos" />
+      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\components\Backgrounds" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />

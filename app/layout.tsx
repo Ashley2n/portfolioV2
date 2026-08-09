@@ -5,6 +5,8 @@ import { poppins, teko,  } from "@/lib/fonts/fonts";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Header from "@/components/layout/header";
+import { ToastProvider } from "@/app/hooks/useToast";
+import { ToastContainer } from "@/components/ui/Toast";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -24,9 +26,12 @@ export default function RootLayout({
       <body
         className={`${teko.variable} ${poppins.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <ToastProvider>
+          <Header />
+          {children}
+          <Footer />
+          <ToastContainer />
+        </ToastProvider>
       </body>
     </html>
   );

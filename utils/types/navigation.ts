@@ -10,6 +10,7 @@ export const headerLinks: NavLink[] = [
   { path: '/about', label: 'About' },
   { path: '/projects', label: 'Project' },
   { path: '/contact', label: 'Contact' },
+  { path: '/', label: 'Resume' },
 ];
 
 export interface FooterLink {
