@@ -10,7 +10,7 @@ const LightPillar = dynamic(() => import("@/components/Backgrounds/LightPillar")
 export default function HomepageHero() {
   return (
     <section className="snap-section relative isolate w-full h-screen overflow-hidden">
-      {/* <LightPillar
+       <LightPillar
         topColor="#5227FF"
         bottomColor="#FF9FFC"
         intensity={1.3}
@@ -24,7 +24,7 @@ export default function HomepageHero() {
         mixBlendMode="screen"
         quality="high"
         className="abolute inset-0"
-      /> */}
+      />
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-end justify-baseline ">
