@@ -9,7 +9,7 @@ import {Mail, User} from "lucide-react";
 import {motion} from "framer-motion";
 import {GeneralModal} from "@/components/ui/modals/GeneralModal";
 import {ReviewForm} from "@/components/ui/ReviewForm";
-import {useToast} from "@/app/hooks/useToast";
+import {useToast} from "@/hooks/useToast";
 import {submitContact} from "@/app/contact/action";
 import dynamic from "next/dynamic";
 

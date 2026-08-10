@@ -16,7 +16,7 @@ datasource db {
 
 model ContactSubmission {
   id         String   @id @default(cuid())
-  
+
   name       String
   email      String
   subject    String?
@@ -28,5 +28,14 @@ model ContactSubmission {
   updatedAt  DateTime @updatedAt
 
   @@index([email])
+  @@index([createdAt])
+}
+
+model ReviewSubmission {
+  id        String   @id @default(cuid())
+  rating    Int
+  message   String   @db.Text
+
+  createdAt  DateTime @default(now())
   @@index([createdAt])
 }

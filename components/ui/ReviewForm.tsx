@@ -6,7 +6,7 @@ import {motion} from "framer-motion";
 import ActionButton from "@/components/ui/Buttons/actionButton";
 import {submitReview} from "@/app/contact/action";
 import {StarRating} from "@/components/ui/Form/StarRating";
-import {useToast} from "@/app/hooks/useToast";
+import {useToast} from "@/hooks/useToast";
 
 export const ReviewForm = () => {
 

@@ -3,7 +3,7 @@
 import {AnimatePresence, motion} from "framer-motion";
 import {CheckCircle2, Info, Loader2, X, XCircle} from "lucide-react";
 import React from "react";
-import {useToast} from "@/app/hooks/useToast";
+import {useToast} from "@/hooks/useToast";
 
 const ICONS = {
     success: <CheckCircle2 className="w-5 h-5 text-emerald-400"/>,

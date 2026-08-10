@@ -2,30 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2be6d04d-aaa9-452e-a356-baba4093d2ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/robots.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/sitemap.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/Form/ContactForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/ProjectSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/og-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/error.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/not-found.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/about/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apitest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/script/apitest.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/contact/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/hooks/useHeaderScroll.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useHeaderScroll.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/hooks/useToast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useToast.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/projects/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/projects/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/AboutMeCardItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Cards/AboutMeCardItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/ContactMeButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Buttons/ContactMeButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/FormComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/FormComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/HomePageFAQ.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Homepage/HomePageFAQ.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/HomePagePitch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Homepage/HomePagePitch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/HomePageProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Homepage/HomePageProjects.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/HomePageTechStack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Homepage/HomePageTechStack.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/HomepageHero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Homepage/HomepageHero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/ProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Cards/ProjectCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/ProjectListCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/ProjectListCards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layout/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/Form/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Form/ContactForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/Form/MailFromInput.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/FormComponent.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ui/ReviewForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/ReviewForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/TextFlipButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Buttons/TextFlipButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/actionButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Buttons/actionButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/Toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Toast.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Production-Ready-Guide.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Production-Ready-Guide.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/prisma.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/prisma.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/contact.queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/contact.queries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/script/test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,11 +71,11 @@
       <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\script" />
+      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2" />
       <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\components\ui\Buttons" />
       <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\components\ui\Cards" />
       <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\components\ui\Homepage" />
-      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\components\ui" />
-      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\public\Logos" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">

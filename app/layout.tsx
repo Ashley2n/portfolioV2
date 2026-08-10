@@ -5,7 +5,7 @@ import {poppins, teko,} from "@/lib/fonts/fonts";
 import {Geist} from "next/font/google";
 import {cn} from "@/lib/utils";
 import Header from "@/components/layout/header";
-import {ToastProvider} from "@/app/hooks/useToast";
+import {ToastProvider} from "@/hooks/useToast";
 import {ToastContainer} from "@/components/ui/Toast";
 
 const geist = Geist({subsets: ['latin'], variable: '--font-sans'});

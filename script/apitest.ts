@@ -1,5 +1,5 @@
 import { error } from "console";
-import { contactFormType } from "./lib/schema/contact";
+import { contactFormType } from "../lib/schema/contact";
 
 const getData = async () => {
   const res = await fetch("http://localhost:3000/contact");

@@ -5,7 +5,7 @@ import {AnimatePresence, motion, Variants} from "framer-motion";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import {ChevronDown, Menu, X} from "lucide-react";
-import {useHeaderScroll} from "@/app/hooks/useHeaderScroll";
+import {useHeaderScroll} from "@/hooks/useHeaderScroll";
 import {headerLinks} from "@/utils/types/navigation";
 import Image from "next/image";
 
