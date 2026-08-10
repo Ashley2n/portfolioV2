@@ -1,23 +1,26 @@
 import { Search } from 'lucide-react'
-import React from 'react'
+import React, {Dispatch, SetStateAction} from 'react'
+type ProjectsHeaderProps = {
+    value: string;
+    setValue: Dispatch<SetStateAction<string>>;
+};
+export const ProjectsHeader = ({value, setValue} :ProjectsHeaderProps) => {
 
-export const ProjectsHeader = () => {
   return (
-    <div
-              className="w-fit max-w-sm min-w-[200px] relative ">
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="text-sm border border-slate-200 rounded-md pl-3 pr-10 py-2 transition duration-300 ease focus:outline-none focus:border-neutral-700 hover:border-slate-300 shadow-sm focus:shadow "
-                  />
-                  <button
-                    className="absolute right-1 top-1 rounded bg-neutral-800 p-1.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-neutral-700 focus:shadow-none active:bg-neutral-700 hover:bg-neutral-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    type="button"
-                  >
-                    <Search className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
+    <div className="relative w-fit min-w-[200px] max-w-sm">
+      <input
+        type="text"
+        placeholder="Search..."
+        value={value}
+        onChange={e => setValue(e.target.value)}
+        className="w-full rounded-md border border-border-subtle bg-surface-chip py-2 pl-3 pr-10 text-sm text-foreground placeholder:text-text-faint transition-colors duration-300 focus:border-border-strong focus:outline-none"
+      />
+      <button
+        type="button"
+        className="absolute right-1 top-1 rounded border border-border-subtle p-1.5  transition-colors text-text-faint disabled:pointer-events-none disabled:opacity-50"
+      >
+        <Search className="h-4 w-4" />
+      </button>
+    </div>
   )
 }

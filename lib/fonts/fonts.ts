@@ -1,9 +1,9 @@
 import {
   Chela_One,
+  Teko,
   Geist,
   Geist_Mono,
   Poppins,
-  Titan_One,
 } from "next/font/google";
 
 export const geistSans = Geist({
@@ -22,10 +22,10 @@ export const chelaOne = Chela_One({
   weight: ["400"],
 });
 
-export const titanOne = Titan_One({
+export const teko = Teko({
   weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-titan-one",
+  variable: "--font-teko",
 });
 
 export const poppins = Poppins({

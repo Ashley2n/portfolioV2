@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { prisma } from "./lib/prisma";
+import { prisma } from "../lib/prisma";
 
 console.log(process.env.DIRECT_URL);
 

@@ -1,13 +1,24 @@
 "use server"
-import { contactSchema } from "@/lib/schema/contact";
-import { createContactSubmission } from "@/lib/services/contact.queries";
+import {contactFormType, contactSchema, reviewFormType, reviewSchema} from "@/lib/schema/contact";
+import {createContactSubmission, createReviewSubmission} from "@/lib/services/contact.queries";
+import {getClientIp, rateLimit} from "@/lib/rate-limit";
 
-export const submitContact = async (data: unknown) => {
+export const submitContact = async (data: contactFormType) => {
   try {
+    const ip = await getClientIp();
+    const {success} = rateLimit(`contact:${ip}`, {limit: 5, windowMs: 10 * 60 * 1000}); // 5 per 10 min per IP
+
+    if (!success) {
+      return {
+        success: false,
+        message: "You're sending messages too quickly. Please wait a few minutes and try again.",
+      };
+    }
+
     const validated = contactSchema.safeParse(data);
 
     if (!validated.success) {
-      return { error: validated.error.flatten };
+      return { error: validated.error.flatten() };
     }
 
     validated.data.subject = "New Portfolio Inquiry";
@@ -18,7 +29,41 @@ export const submitContact = async (data: unknown) => {
       message: "Message sent successfully",
     };
   } catch (error) {
-    console.error("Somthing went wrong in the Server Action: " + error);
+    console.error("Something went wrong in the Server Action: " + error);
+
+    return {
+      success: false,
+      message: "Something went wrong in contact server action.ts",
+    };
+  }
+};
+
+export const submitReview = async (data: reviewFormType) => {
+  try {
+    const ip = await getClientIp();
+    const {success} = rateLimit(`review:${ip}`, {limit: 3, windowMs: 10 * 60 * 1000}); // 3 per 10 min per IP
+
+    if (!success) {
+      return {
+        success: false,
+        message: "You're submitting too quickly. Please wait a few minutes and try again.",
+      };
+    }
+
+    const validated = reviewSchema.safeParse(data);
+
+    if (!validated.success) {
+      return { error: validated.error.flatten() };
+    }
+
+
+    await createReviewSubmission(validated.data);
+    return {
+      success: true,
+      message: "Message sent successfully",
+    };
+  } catch (error) {
+    console.error("Something went wrong in the Server Action: " + error);
 
     return {
       success: false,

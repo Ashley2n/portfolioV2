@@ -1,3 +1,4 @@
+import { TextFlipButtonProps } from '@/app/types/types'
 import React from 'react'
 
 

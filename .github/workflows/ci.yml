@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  ci:
+    name: Lint, typecheck, and build
+    runs-on: ubuntu-latest
+
+    steps:
+      # Pulls your repo's code onto the runner so the steps below have
+      # something to work with.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Installs Node.js on the runner, and caches your npm dependencies
+      # between runs (keyed off package-lock.json) so `npm ci` below is fast.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22" # match whatever you run locally (`node -v`)
+          cache: "npm"
+
+      # Installs the exact versions from package-lock.json (faster and
+      # more reproducible in CI than `npm install`). This also runs your
+      # "postinstall" script (prisma generate) automatically.
+      - name: Install dependencies
+        run: npm ci
+
+      # Runs your existing "lint" script from package.json.
+      - name: Lint
+        run: npm run lint
+
+      # ── ACTION NEEDED ───────────────────────────────────────────────
+      # package.json doesn't have a "typecheck" script yet. Add this
+      # under "scripts" in package.json:
+      #   "typecheck": "tsc --noEmit"
+      # (tsc --noEmit type-checks the whole project without emitting any
+      # .js output - it just reports errors and exits non-zero if any.)
+      # ─────────────────────────────────────────────────────────────────
+      - name: Typecheck
+        run: npm run typecheck
+
+      # ── OPTIONAL - fill in once you add tests ──────────────────────
+      # There's no test runner in package.json yet (no Jest/Vitest/etc).
+      # Once you add one and a "test" script, uncomment this step so CI
+      # runs your tests on every PR too.
+      # - name: Test
+      #   run: npm test
+      # ─────────────────────────────────────────────────────────────────
+
+      # Runs your existing "build" script. This goes last on purpose -
+      # it's the slowest check, so no point paying for it if lint or
+      # typecheck already failed.
+      - name: Build
+        run: npm run build
+        # ── HEADS UP - not needed today, but keep in mind ────────────
+        # If a page in this app ever queries the database at build time
+        # (e.g. generateStaticParams calling Prisma), this step will need
+        # a DATABASE_URL. Add it as a GitHub Actions secret under repo
+        # Settings -> Secrets and variables -> Actions, then reference it
+        # here:
+        # env:
+        #   DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        # None of your current pages fetch from the DB at build time, so
+        # this isn't required yet - just flagging it before it surprises
+        # you later.

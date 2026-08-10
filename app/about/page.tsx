@@ -1,10 +1,15 @@
 import { AboutCardListing } from "@/components/ui/AboutCardListing";
-import { AboutMeCardItem } from "@/components/ui/AboutMeCardItem";
-import HomePagePitch from "@/components/ui/HomePagePitch";
-
-export default function page() {
+import { AboutMeCardItem } from "@/components/ui/Cards/AboutMeCardItem";
+import HomePagePitch from "@/components/ui/Homepage/HomePagePitch";
+import {Metadata} from "next";
+// app/about/page.tsx
+export const metadata: Metadata = {
+    title: "About",
+    description: "Full-stack developer studying Software Development at Indian Hills Community College — background, interests, and skills.",
+};
+export default function AboutPage() {
   return (
-    <div className="space-y-50">
+    <div>
       <AboutMeCardItem />
       <AboutCardListing />
       <HomePagePitch/>

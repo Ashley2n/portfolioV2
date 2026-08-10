@@ -1,4 +1,4 @@
-import { LucideProps } from "lucide-react";
+import {SiFacebook, SiGithub, SiIndeed, SiInstagram, SiSpotify} from "@icons-pack/react-simple-icons"
 
 export interface NavLink {
   path: string;
@@ -10,33 +10,45 @@ export const headerLinks: NavLink[] = [
   { path: '/about', label: 'About' },
   { path: '/projects', label: 'Project' },
   { path: '/contact', label: 'Contact' },
+  { path: '/', label: 'Resume' },
 ];
 
-export interface footerLink{
+export interface FooterLink {
   path: string;
   label: string;
-  icon: string;
+  icon: React.ElementType;
+  color: string;
 }
 
-export const footerLinks: footerLink[] = [
+export const footerLinks: FooterLink[] = [
   {
-    path: 'https://www.linkedin.com/in/ashley-abongwa-1567822b2/',
-    label: 'Linkedin',
-    icon: '/icons/linkedin.svg'
+    path: "https://www.linkedin.com/in/ashley-abongwa-1567822b2/",
+    label: "LinkedIn",
+    icon: SiIndeed,
+    color: "group-hover:text-[#0A66C2]",
   },
   {
-    path:'https://instagram.com',
-    label:'Instagram',
-    icon: '/icons/instagram.svg'
+    path: "https://github.com/ashley2n",
+    label: "GitHub",
+    icon: SiGithub,
+    color: "group-hover:text-[#FFFFFF]",
+  },
+  {
+    path: "https://instagram.com",
+    label: "Instagram",
+    icon: SiInstagram,
+    color: "group-hover:text-[#E4405F]",
   },
   {
     path: "https://open.spotify.com/playlist/37i9dQZF1DX2UgsUIg75Vg",
     label: "Spotify",
-    icon: "/icons/list-music.svg"
+    icon: SiSpotify,
+    color: "group-hover:text-[#1DB954]",
   },
   {
     path: "https://facebook.com",
     label: "Facebook",
-    icon: "/icons/facebook.svg"
-  }
-]
+    icon: SiFacebook,
+    color: "group-hover:text-[#1877F2]",
+  },
+];
