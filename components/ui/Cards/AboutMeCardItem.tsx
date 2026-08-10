@@ -1,11 +1,13 @@
 'use client';
 import {motion} from "framer-motion";
-import ContactMeButton from "./ContactMeButton";
-import LiquidEther from "@/components/Backgrounds/LiquidEther";
 import {GeneralModal} from "@/components/ui/modals/GeneralModal";
 import {ReviewForm} from "@/components/ui/ReviewForm";
 import React, {useState} from "react";
+import dynamic from "next/dynamic";
 
+const LiquidEther = dynamic(() => import("@/components/Backgrounds/LiquidEther"), {
+    ssr: false,
+});
 export const AboutMeCardItem = () => {
     const [reviewModalOpen, setReviewModalOpen] = useState(false);
     return (
@@ -43,9 +45,9 @@ export const AboutMeCardItem = () => {
                     transition={{duration: 0.6, ease: [0.22, 1, 0.36, 1]}}
                 >
                     <div className="space-y-4">
-                        <p className="text-xs font-medium uppercase tracking-[0.2em] text-text-faint">
+                        <h1 className="text-xs font-medium uppercase tracking-[0.2em] text-text-faint">
                             Software Developer — Iowa, US
-                        </p>
+                        </h1>
                         <p className="text-sm font-light leading-relaxed text-text-muted md:text-base">
                             I&apos;m Ashley Abongwa — a full-stack developer finishing my degree in
                             Software Development at Indian Hills Community College, building with

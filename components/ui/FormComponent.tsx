@@ -1,6 +1,6 @@
 import { Mail, User } from "lucide-react";
 import React from "react";
-import ActionButton from "./actionButton";
+import ActionButton from "./Buttons/actionButton";
 import Image from "next/image";
 import ContactImage from "../../public/images/bg7.jpg";
 import { submitContact } from "@/app/contact/action";

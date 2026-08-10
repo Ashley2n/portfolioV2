@@ -3,7 +3,7 @@ import {Controller, useForm} from "react-hook-form";
 import {reviewFormType, reviewSchema} from "@/lib/schema/contact";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {motion} from "framer-motion";
-import ActionButton from "@/components/ui/actionButton";
+import ActionButton from "@/components/ui/Buttons/actionButton";
 import {submitReview} from "@/app/contact/action";
 import {StarRating} from "@/components/ui/Form/StarRating";
 import {useToast} from "@/app/hooks/useToast";

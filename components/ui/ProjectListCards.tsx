@@ -1,6 +1,6 @@
 'use client';
 import {projectData} from "@/lib/contants";
-import {ProjectCard} from "./ProjectCard";
+import {ProjectCard} from "./Cards/ProjectCard";
 import {motion, Variants} from "framer-motion";
 import {useMemo, useState} from "react";
 type ProjectListCardsProps = {

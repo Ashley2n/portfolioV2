@@ -1,6 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import LightPillar from "../Backgrounds/LightPillar";
+
+import dynamic from "next/dynamic";
+
+const LightPillar = dynamic(() => import("@/components/Backgrounds/LightPillar"), {
+    ssr: false,
+});
 
 export default function HomepageHero() {
   return (

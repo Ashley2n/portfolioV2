@@ -1,10 +1,13 @@
 'use client';
 
 import { motion } from "framer-motion";
-import ContactMeButton from "./ContactMeButton";
-import Particles from "@/components/Backgrounds/Particles";
+import ContactMeButton from "../Buttons/ContactMeButton";
 import {cn} from "@/lib/utils";
+import dynamic from "next/dynamic";
 
+const Particles = dynamic(() => import("@/components/Backgrounds/Particles"), {
+    ssr: false,
+});
 type HomePagePitchProps = {
     otherStyles?: string;
 };
