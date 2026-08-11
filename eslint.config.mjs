@@ -1,37 +1,29 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+  globalIgnores([
+    "node_modules/**",
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
 
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-    ],
-  },
-  {
-    // Vendored/copy-pasted third-party visual effects (e.g. React Bits
-    // animated backgrounds). We didn't author these and don't hand-maintain
-    // strict types or dependency arrays for them - relax just the two
-    // rules that keep tripping on this kind of code. Everything else in
-    // the project still gets the full strict ruleset.
+    // Vendored/copy-pasted third-party visual effects.
+    // Relax only the rules that commonly conflict with these components.P
     files: ["components/Backgrounds/**/*.{ts,tsx}"],
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
       "react-hooks/exhaustive-deps": "off",
+      "react-hooks/set-state-in-effect": "off",
     },
   },
-];
+]);
 
 export default eslintConfig;
