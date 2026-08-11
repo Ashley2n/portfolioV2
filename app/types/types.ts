@@ -41,7 +41,7 @@ export type TruncatedTextType = {
 
 export type FAQSetType = {
   Question: string,
-  Anwser: string 
+  Answer: string
 }
 
 export type TechStackType = {

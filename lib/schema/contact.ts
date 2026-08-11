@@ -8,3 +8,10 @@ export const contactSchema = z.object({
 });
 
 export type contactFormType = z.infer<typeof contactSchema>;
+
+export const reviewSchema = z.object({
+  rating: z.number().min(1, "Please select a rating").max(5),
+  message: z.string().min(1, "Please write a short review").max(1000),
+});
+
+export type reviewFormType = z.infer<typeof reviewSchema>;
