@@ -6,7 +6,7 @@ import HomePageTechStack from "@/components/ui/Homepage/HomePageTechStack";
 import {Metadata} from "next";
 
 export const metadata: Metadata = {
-    title: "Hero",
+    title: "Ashley Abongwa — Full-Stack SWE",
     description: "Full-stack developer recent graduate in Software Development — background, interests, and skills.",
 };
 

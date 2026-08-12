@@ -1,15 +1,17 @@
-import { error } from "console";
-import { contactFormType } from "../lib/schema/contact";
+import {createContactSubmission} from "@/lib/services/contact.queries";
+import {contactFormType} from "@/lib/schema/contact";
+import {submitContact} from "@/app/contact/action";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/contact");
-  const data: contactFormType = await res.json();
+  const contact: contactFormType = {
+    name: "1234",
+    email: "t@gmail.com",
+    message: "Test",
+  }
+  return submitContact(contact)
 
-  console.log(data.name);
 };
 
-const main = async () => {
-  await getData();
-};
-
-main().catch((error) => console.log("Main Func: " + error));
+getData()
+    .then(contact => console.log(contact))
+    .catch((error) => console.log("Main Func: " + error));

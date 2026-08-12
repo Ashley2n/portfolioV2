@@ -7,12 +7,12 @@ import {cn} from "@/lib/utils";
 import Header from "@/components/layout/header";
 import {ToastProvider} from "@/hooks/useToast";
 import {ToastContainer} from "@/components/ui/Toast";
+import "dotenv/config";
 
 const geist = Geist({subsets: ['latin'], variable: '--font-sans'});
-
-// TODO: Edit URL
+const _domain = process.env.MY_DOMAIN;
 export const metadata: Metadata = {
-    metadataBase: new URL("https://your-domain.com"),
+    metadataBase: new URL("https://portfolio.aabongwa.dev"),
 
     title: {
         default: "Ashley Abongwa — Full-Stack Software Developer",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Ashley Abongwa — Full-Stack Software Developer",
         description: "Portfolio, projects, and tech stack of Ashley Abongwa.",
-        url: "https://your-domain.com",
+        url: _domain,
         siteName: "Ashley Abongwa",
         images: [{ url: "/og-image.png", width: 1200, height: 630 }],
         locale: "en_US",
@@ -38,14 +38,12 @@ export const metadata: Metadata = {
     },
 };
 
-// TODO: Edite domain Url
-
 export function PersonJsonLd() {
     const data = {
         "@context": "https://schema.org",
         "@type": "Person",
         name: "Ashley Abongwa",
-        url: "https://your-domain.com",
+        url: _domain,
         jobTitle: "Full-Stack Software Developer",
         address: {
             "@type": "PostalAddress",

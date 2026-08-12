@@ -1,14 +1,8 @@
 import {footerLinks} from "@/utils/types/navigation";
-import {icons} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-// TODO:
-//  [ ]: Simpler design to links
-//        - On hover color should change to original color and revert to white/gray
-
-//  [ ]: Links should redirect user in a new tab rather and on their tab
 const EASE = "ease-[cubic-bezier(0.22,1,0.36,1)]";
 export default function footer() {
     return (
