@@ -5,15 +5,15 @@ import {getClientIp, rateLimit} from "@/lib/rate-limit";
 
 export const submitContact = async (data: contactFormType) => {
     try {
-        const ip = await getClientIp();
-        const {success} = rateLimit(`contact:${ip}`, {limit: 5, windowMs: 10 * 60 * 1000}); // 5 per 10 min per IP
-
-        if (!success) {
-            return {
-                success: false,
-                message: "You're sending messages too quickly. Please wait a few minutes and try again.",
-            };
-        }
+        // const ip = await getClientIp();
+        // const {success} = rateLimit(`contact:${ip}`, {limit: 5, windowMs: 10 * 60 * 1000}); // 5 per 10 min per IP
+        //
+        // if (!success) {
+        //     return {
+        //         success: false,
+        //         message: "You're sending messages too quickly. Please wait a few minutes and try again.",
+        //     };
+        // }
 
         const validated = contactSchema.safeParse(data);
 

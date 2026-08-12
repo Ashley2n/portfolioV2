@@ -26,7 +26,7 @@ export default function ContactForm() {
         reset,
         formState: {errors, isSubmitting},
 
-    } = useForm<contactFormType>({resolver: zodResolver(contactSchema), reValidateMode:'onBlur'});
+    } = useForm<contactFormType>({resolver: zodResolver(contactSchema), reValidateMode: 'onBlur'});
 
 
     const onSubmit = async (data: contactFormType) => {
@@ -38,6 +38,7 @@ export default function ContactForm() {
             update(id, {type: "success", message: "Message sent!"});
         } else {
             update(id, {type: "error", message: "Something went wrong."});
+            console.log(result.message, result.error);
         }
     };
 
@@ -46,9 +47,6 @@ export default function ContactForm() {
     * - [ ] Optomize loading
     * - [ ] Finding loading from framer motion
     * - [ ]
-    *
-    * npm install -D vitest @vitejs/plugin-react jsdom @testing-library/react @testing-library/dom vite-tsconfig-paths
-
     * */
 
     return (
@@ -176,7 +174,8 @@ export default function ContactForm() {
 
                                 {/* Message */}
                                 <div>
-                                    <label htmlFor="message" className="block mb-2.5 text-sm font-medium text-foreground">
+                                    <label htmlFor="message"
+                                           className="block mb-2.5 text-sm font-medium text-foreground">
                                         Your message
                                     </label>
                                     <textarea
@@ -197,6 +196,7 @@ export default function ContactForm() {
                                 <ActionButton
                                     title={isSubmitting ? "Sending" : "Submit"}
                                     isSubmitting={isSubmitting}
+                                    type={"submit"}
                                     otherStyles="text-sm py-3! w-full mt-8  disabled:opacity-70 disabled:cursor-not-allowed"
                                 />
                             </form>
