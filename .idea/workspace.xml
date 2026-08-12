@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2be6d04d-aaa9-452e-a356-baba4093d2ba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/contact/__test__/action.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/services/__test__/contact.queries.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vitest.config.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vitest.setup.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/contact/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/contact/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/Form/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Form/ContactForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +36,15 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Vitest.Contact Queries.Create returns.executor": "Run",
+    "Vitest.Contact Queries.GivenInvalidData_WhenCreateIsCalled_ReturnFails.executor": "Run",
+    "Vitest.Contact Queries.GivenValidData_WhenCreateIsCalled_DoesNotCallReview.executor": "Run",
+    "Vitest.Contact.GivenCorrectInput_WhneSubmitting_ReturnsContact.executor": "Run",
+    "Vitest.Contact.GivenIncorrectInput_WhenSubmitting_ReturnsError.executor": "Run",
+    "Vitest.Contact.Review.GivenCorrectInput_WhenSubmitting_ReturnsReview.executor": "Run",
+    "Vitest.Contact.Review.GivenInvalidInput_WhenSubmitting_ReturnsFalse.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "Reactbits-BG",
+    "git-widget-placeholder": "Deployment-Fixture",
     "ignore.virus.scanning.warn.message": "true",
     "javascript.preferred.runtime.type.id": "node",
     "js.debugger.nextJs.config.created.client": "true",
@@ -48,14 +64,86 @@
       <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\app\contact\__test__" />
+      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\app\contact" />
+      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\app\api\contact" />
       <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\script" />
       <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2" />
-      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\components\ui\Buttons" />
-      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\components\ui\Cards" />
-      <recent name="C:\Users\aabongwa\Documents\01-Projects\Side-Projects\portfolioV2\components\ui\Homepage" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Next.js: server-side">
+  <component name="RunManager" selected="Vitest.Contact Queries.GivenInvalidData_WhenCreateIsCalled_ReturnFails">
+    <configuration name="Contact Queries.Create returns" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/lib/services/__test__/contact.queries.test.ts" />
+      <test-names>
+        <test-name value="Contact Queries" />
+        <test-name value="Create returns" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Contact Queries.GivenInvalidData_WhenCreateIsCalled_ReturnFails" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/lib/services/__test__/contact.queries.test.ts" />
+      <test-names>
+        <test-name value="Contact Queries" />
+        <test-name value="GivenInvalidData_WhenCreateIsCalled_ReturnFails" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Contact Queries.GivenValidData_WhenCreateIsCalled_DoesNotCallReview" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/lib/services/__test__/contact.queries.test.ts" />
+      <test-names>
+        <test-name value="Contact Queries" />
+        <test-name value="GivenValidData_WhenCreateIsCalled_DoesNotCallReview" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Contact.Review.GivenCorrectInput_WhenSubmitting_ReturnsReview" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/contact/__test__/action.test.ts" />
+      <test-names>
+        <test-name value="Contact" />
+        <test-name value="Review" />
+        <test-name value="GivenCorrectInput_WhenSubmitting_ReturnsReview" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Contact.Review.GivenInvalidInput_WhenSubmitting_ReturnsFalse" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/contact/__test__/action.test.ts" />
+      <test-names>
+        <test-name value="Contact" />
+        <test-name value="Review" />
+        <test-name value="GivenInvalidInput_WhenSubmitting_ReturnsFalse" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>
@@ -69,6 +157,15 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Vitest.Contact Queries.GivenInvalidData_WhenCreateIsCalled_ReturnFails" />
+        <item itemvalue="Vitest.Contact Queries.GivenValidData_WhenCreateIsCalled_DoesNotCallReview" />
+        <item itemvalue="Vitest.Contact Queries.Create returns" />
+        <item itemvalue="Vitest.Contact.Review.GivenInvalidInput_WhenSubmitting_ReturnsFalse" />
+        <item itemvalue="Vitest.Contact.Review.GivenCorrectInput_WhenSubmitting_ReturnsReview" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

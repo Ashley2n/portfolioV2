@@ -46,6 +46,9 @@ export default function ContactForm() {
     * - [ ] Optomize loading
     * - [ ] Finding loading from framer motion
     * - [ ]
+    *
+    * npm install -D vitest @vitejs/plugin-react jsdom @testing-library/react @testing-library/dom vite-tsconfig-paths
+
     * */
 
     return (
