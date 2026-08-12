@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
-// TODO: Edite domain Url
-const BASE_URL = "https://your-domain.com";
+const _domain = process.env.MY_DOMAIN;
+const BASE_URL = _domain;
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const routes = ["", "/about", "/projects", "/contact"];
