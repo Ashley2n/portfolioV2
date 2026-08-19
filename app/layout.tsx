@@ -1,12 +1,13 @@
-import type {Metadata} from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/layout/footer";
-import {poppins, teko,} from "@/lib/fonts/fonts";
-import {Geist} from "next/font/google";
-import {cn} from "@/lib/utils";
+import { poppins, teko } from "@/lib/fonts/fonts";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
 import Header from "@/components/layout/header";
 import {ToastProvider} from "@/hooks/useToast";
 import {ToastContainer} from "@/components/ui/Toast";
+import { Analytics } from "@vercel/analytics/next";
 import "dotenv/config";
 
 const geist = Geist({subsets: ['latin'], variable: '--font-sans'});
@@ -58,32 +59,31 @@ export function PersonJsonLd() {
         ],
     };
 
-    return (
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{__html: JSON.stringify(data)}}
-        />
-    );
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
 }
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
+  children,
+}: Readonly<{
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang="en" className={cn("font-sans", geist.variable)}>
-        <body
-            className={`${teko.variable} ${poppins.variable} antialiased`}
-        >
+  return (
+    <html lang="en" className={cn("font-sans", geist.variable)}>
+      <body className={`${teko.variable} ${poppins.variable} antialiased`}>
         <ToastProvider>
-            <PersonJsonLd/>
-            <Header/>
-            {children}
-            <Footer/>
-            <ToastContainer/>
+          <PersonJsonLd />
+          <Header />
+          {children}
+          <Footer />
+          <ToastContainer />
+          <Analytics />
         </ToastProvider>
-        </body>
-        </html>
-    );
+      </body>
+    </html>
+  );
 }

@@ -13,12 +13,12 @@ interface HPProjectsProps {
 
 const listVariants: Variants = {
     hidden: {},
-    show: {transition: {duration: 0.5, delay: 0.3, staggerChildren: 0.5}},
+    show: {transition: {duration: 0.5, delay: 0.3, staggerChildren: 0.3}},
 };
 
 const itemVariants: Variants = {
     hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
+    show: { opacity: 1, transition: { duration: 0.2, ease: [0.22, 1, 0.36, 1] } },
 };
 
 export default function HomePageProjects({otherStyles}: HPProjectsProps) {

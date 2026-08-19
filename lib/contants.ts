@@ -97,7 +97,7 @@ export const tagOptions = {
         color: "#fff",
     },
     GitHub: {
-        name: "GutHub",
+        name: "GitHub",
         imgaeUrl: "/icons/github.png",
         color: "#fff",
     },
