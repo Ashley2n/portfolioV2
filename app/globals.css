@@ -59,7 +59,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   /* proximity, not mandatory — settles gently on a section instead of
      forcing a hard stop, which matters since these sections are
      content-sized rather than locked to 100vh */
