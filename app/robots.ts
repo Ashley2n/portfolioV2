@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-// TODO: Edit URL
+const _domain = process.env.MY_DOMAIN;
 export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: ["/api/"],
         },
-        sitemap: "https://your-domain.com/sitemap.xml",
+        sitemap: _domain + "/sitemap.xml",
     };
 }

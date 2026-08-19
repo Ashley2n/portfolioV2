@@ -49,8 +49,8 @@ jobs:
       # There's no test runner in package.json yet (no Jest/Vitest/etc).
       # Once you add one and a "test" script, uncomment this step so CI
       # runs your tests on every PR too.
-      # - name: Test
-      #   run: npm test
+      - name: Test
+        run: npm test
       # ─────────────────────────────────────────────────────────────────
 
       # Runs your existing "build" script. This goes last on purpose -

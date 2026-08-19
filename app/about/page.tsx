@@ -5,7 +5,7 @@ import {Metadata} from "next";
 // app/about/page.tsx
 export const metadata: Metadata = {
     title: "About",
-    description: "Full-stack developer studying Software Development at Indian Hills Community College — background, interests, and skills.",
+    description: "Full-stack developer recent graduate in Software Development — background, interests, and skills.",
 };
 export default function AboutPage() {
   return (
