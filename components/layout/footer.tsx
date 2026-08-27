@@ -2,8 +2,14 @@ import {footerLinks} from "@/utils/types/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import linkedinURL from "@/public/Logos/linkedin.png"
+
 
 const EASE = "ease-[cubic-bezier(0.22,1,0.36,1)]";
+
+const likedInIcon = () => {
+    return <Image src={linkedinURL} width={100} height={100} alt="LinkedIn Image"/>
+}
 export default function footer() {
     return (
         <footer className="w-full border-t border-white/10 mt-8">
@@ -18,7 +24,7 @@ export default function footer() {
                     </Link>
 
                     <p className="text-sm font-light text-neutral-500">
-                        © 2026 Not Copyright Yet
+                        © 2026 Ashley Abongwa
                     </p>
                 </div>
 
@@ -46,3 +52,4 @@ export default function footer() {
         </footer>
     );
 }
+
