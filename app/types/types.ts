@@ -27,7 +27,8 @@ type projectSkillType = {
     | "HTML"
     | "CSS"
     | "Flask"
-    | "C#";
+    | "C#"
+    | "Next.js";
 
   imageUrl?: string;
   color?: string;
