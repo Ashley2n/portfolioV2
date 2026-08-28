@@ -257,7 +257,7 @@ export const FAQSet: FAQSetType[] = [
   },
   {
     Question: "How do you handle challenges during development?",
-    Answer: `Challenges are a normal part of software development. When I encounter a problem, I;\n
+    Answer: `Challenges are a normal part of software development. When I encounter a problem, I follow these framework;\n
 
 \t * Research the issue thoroughly.\n
 \t * Review documentation.\n
